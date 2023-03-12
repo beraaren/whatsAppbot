@@ -90,8 +90,8 @@ def fimg(tel, tel2, msg, img):
     itxt.send_keys(Keys.ENTER)
 
     
-SHEET_ID = '1C0QzEP31YRlqlQQjhUlFcd1Jj8t8K0DqYE4VXDmOU1g'
-SHEET_NAME = 'Customers'
+SHEET_ID = ''
+SHEET_NAME = ''
 gc = gspread.service_account('credentials.json')
 spreadsheet = gc.open_by_key(SHEET_ID)
 worksheet = spreadsheet.worksheet(SHEET_NAME)
