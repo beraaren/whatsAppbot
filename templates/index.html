@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f3f3f3;
+            color: #000;
+        }
+        
+        .darkmode {
+            background-color: #000;
+            color: #f3f3f3;
+        }
+        
+        .users {
+            width: 25vw;
+            display: inline-flex;
+            flex-direction: column;
+        }
+        
+        .user {
+            width: 84%;
+            margin: 3%;
+            background-color: #a09797;
+            height: fit-content;
+            padding: 5%;
+            border-bottom: #ddd 1px solid;
+        }
+        
+        .information {
+            width: 84%;
+            margin: 3%;
+            background-color: #a09797;
+            height: fit-content;
+            padding: 5%;
+            border-bottom: #7b7676 1px solid;
+        }
+        
+        .btn {
+            background-color: rgb(82, 210, 193);
+            border-radius: 5px;
+            color: #ffffff;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: x-large;
+            width: fit-content;
+            height: fit-content;
+            padding: 1.6vw;
+            display: inline-flex;
+            margin-left: 3vw;
+        }
+        
+        .texbox {
+            background-color: #a09797;
+            border: 0px;
+            box-shadow: 0px;
+            width: 25vw;
+            font-size: medium;
+            height: max-content;
+            padding: 1vw;
+            height: 100%;
+            border-radius: 10px;
+            max-width: 35vw;
+            max-height: 50vh;
+            min-height: 20vh;
+            min-width: 20vw;
+        }
+        
+        .non {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="{{url_for('restart')}}" class="btn" style="background-color: #ff7272!important;">Restart</a>
+    <button onclick="darkmode()" class="btn" style="background-color: #00000000!important;border: 0px;    position: absolute;right: 5vw;width: 8vw;height: fit-content;">
+        <svg id="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path stroke="black" fill="black" d="M375.7 19.7c-1.5-8-6.9-14.7-14.4-17.8s-16.1-2.2-22.8 2.4L256 61.1 173.5 4.2c-6.7-4.6-15.3-5.5-22.8-2.4s-12.9 9.8-14.4 17.8l-18.1 98.5L19.7 136.3c-8 1.5-14.7 6.9-17.8 14.4s-2.2 16.1 2.4 22.8L61.1 256 4.2 338.5c-4.6 6.7-5.5 15.3-2.4 22.8s9.8 13 17.8 14.4l98.5 18.1 18.1 98.5c1.5 8 6.9 14.7 14.4 17.8s16.1 2.2 22.8-2.4L256 450.9l82.5 56.9c6.7 4.6 15.3 5.5 22.8 2.4s12.9-9.8 14.4-17.8l18.1-98.5 98.5-18.1c8-1.5 14.7-6.9 17.8-14.4s2.2-16.1-2.4-22.8L450.9 256l56.9-82.5c4.6-6.7 5.5-15.3 2.4-22.8s-9.8-12.9-17.8-14.4l-98.5-18.1L375.7 19.7zM269.6 110l65.6-45.2 14.4 78.3c1.8 9.8 9.5 17.5 19.3 19.3l78.3 14.4L402 242.4c-5.7 8.2-5.7 19 0 27.2l45.2 65.6-78.3 14.4c-9.8 1.8-17.5 9.5-19.3 19.3l-14.4 78.3L269.6 402c-8.2-5.7-19-5.7-27.2 0l-65.6 45.2-14.4-78.3c-1.8-9.8-9.5-17.5-19.3-19.3L64.8 335.2 110 269.6c5.7-8.2 5.7-19 0-27.2L64.8 176.8l78.3-14.4c9.8-1.8 17.5-9.5 19.3-19.3l14.4-78.3L242.4 110c8.2 5.7 19 5.7 27.2 0zM256 368a112 112 0 1 0 0-224 112 112 0 1 0 0 224zM192 256a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z"/></svg>
+        <svg id="moon" class="non" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path stroke="white" fill="white" d="M144.7 98.7c-21 34.1-33.1 74.3-33.1 117.3c0 98 62.8 181.4 150.4 211.7c-12.4 2.8-25.3 4.3-38.6 4.3C126.6 432 48 353.3 48 256c0-68.9 39.4-128.4 96.8-157.3zm62.1-66C91.1 41.2 0 137.9 0 256C0 379.7 100 480 223.5 480c47.8 0 92-15 128.4-40.6c1.9-1.3 3.7-2.7 5.5-4c4.8-3.6 9.4-7.4 13.9-11.4c2.7-2.4 5.3-4.8 7.9-7.3c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-3.7 .6-7.4 1.2-11.1 1.6c-5 .5-10.1 .9-15.3 1c-1.2 0-2.5 0-3.7 0c-.1 0-.2 0-.3 0c-96.8-.2-175.2-78.9-175.2-176c0-54.8 24.9-103.7 64.1-136c1-.9 2.1-1.7 3.2-2.6c4-3.2 8.2-6.2 12.5-9c3.1-2 6.3-4 9.6-5.8c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-3.6-.3-7.1-.5-10.7-.6c-2.7-.1-5.5-.1-8.2-.1c-3.3 0-6.5 .1-9.8 .2c-2.3 .1-4.6 .2-6.9 .4z"/></svg>
+    </button>
+
+    <form style="display: flex;justify-content: center; align-items: flex-end;height: 78vh;">
+
+        <div class="users">
+            <div class="information">
+                {{ tp }} kişiye yollandı
+            </div>
+            {%for c, if in zip(ifs[0], ifs[1])%}
+            <div class="information">
+                {{c}}'si : {{if}} olanlara
+            </div>
+            {% endfor %}
+        </div>
+        <div class="users">
+            {%for s, i in zip(clists[0], range(clists[1]))%}
+            <select name="slct{{i}}" class="information" id="slct{{i}}">
+                <option value="" selected></option>
+                {%for o in s%}
+                <option value="{{o}}">{{o}}</option>
+                {% endfor %}
+
+            </select> {% endfor %}
+        </div>
+        <div style="display: flex; margin-left: 4vw;height: min-content;">
+            <div>
+                <input type="file" name="file" id="file" style="position: relative;bottom: 5vh;left: 5vh;background-color: #9a9a9a9a;padding: 3vh;margin: -3vh;border-radius: 15px;">
+                <textarea class="texbox" name="msg" id="msg"></textarea>
+            </div>
+            <button class="btn" formmethod="post" type="submit">mesaj yolla
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#ffffff" d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376V479.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z"/></svg>
+            </button>
+        </div>
+    </form>
+
+</body>
+<script>
+    function darkmode() {
+        var element = document.body;
+        element.classList.toggle("darkmode");
+        document.getElementById("moon").classList.toggle("non");
+        document.getElementById("sun").classList.toggle("non");
+    }
+</script>
+
+</html>
