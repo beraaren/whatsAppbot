@@ -1,3 +1,5 @@
+### other languages:  [Türkçe](https://github.com/beraaren/whatsAppbot/blob/main/more_langs/tr.md), [Español](https://github.com/beraaren/whatsAppbot/blob/main/more_langs/sp.md), [Русский](https://github.com/beraaren/whatsAppbot/blob/main/more_langs/rs.md), [Deutsch](https://github.com/beraaren/whatsAppbot/blob/main/more_langs/de.md), [中国人](https://github.com/beraaren/whatsAppbot/blob/main/more_langs/cn.md)
+
 ## **How to use**
 ### NOTE: 
 If you are getting chromedriver error
