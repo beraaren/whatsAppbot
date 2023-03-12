@@ -60,6 +60,6 @@ más tarde
 ![](https://raw.githubusercontent.com/beraaren/whatsAppbot/main/more_langs/6.png)
 
 muévase al directorio del repositorio y establezca el nombre del archivo .json
-> credenciales.json
+> credentials.json
 
 **bien hecho, genial :)**
